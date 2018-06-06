@@ -179,6 +179,26 @@ class PostController extends Controller
         return redirect()->route('admin.post.index');
     }
 
+    public function pending()
+    {
+        $posts = Post::where('is_approved',false)->get();
+        return view('admin.post.pending',compact('posts'));
+    }
+
+    public function approval($id)
+    {
+        $post = Post::find($id);
+        if ($post->is_approved == false)
+        {
+            $post->is_approved = true;
+            $post->save();
+            Toastr::success('Post Successfully Approved :)','Success');
+        } else {
+            Toastr::info('This Post is already approved','Info');
+        }
+        return redirect()->back();
+    }
+
     /**
      * Remove the specified resource from storage.
      *
