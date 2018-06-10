@@ -34,7 +34,7 @@
                                 </thead>
                                 <tfoot>
                                 <tr>
-                                    < <th>ID</th>
+                                    <th>ID</th>
                                     <th>Email</th>
                                     <th>Created At</th>
                                     <th>Updated At</th>
