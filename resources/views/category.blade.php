@@ -27,8 +27,8 @@
         <div class="container">
 
             <div class="row">
-                @if($category->posts->count() > 0)
-                    @foreach($category->posts as $post)
+                @if($posts->count() > 0)
+                    @foreach($posts as $post)
                         <div class="col-lg-4 col-md-6">
                             <div class="card h-100">
                                 <div class="single-post post-style-1">

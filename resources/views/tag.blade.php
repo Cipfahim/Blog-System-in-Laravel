@@ -21,8 +21,8 @@
         <div class="container">
 
             <div class="row">
-                @if($tag->posts->count() > 0)
-                    @foreach($tag->posts as $post)
+                @if($posts->count() > 0)
+                    @foreach($posts as $post)
                         <div class="col-lg-4 col-md-6">
                             <div class="card h-100">
                                 <div class="single-post post-style-1">

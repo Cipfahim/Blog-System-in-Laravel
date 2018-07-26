@@ -64,3 +64,8 @@ Route::group(['as'=>'author.','prefix'=>'author','namespace'=>'Author','middlewa
     Route::resource('post','PostController');
     Route::get('/favorite','FavoriteController@index')->name('favorite.index');
 });
+
+View::composer('layouts.frontend.partial.footer',function ($view) {
+    $categories = App\Category::all();
+    $view->with('categories',$categories);
+});
