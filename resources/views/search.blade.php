@@ -23,8 +23,7 @@
         <div class="container">
 
             <div class="row">
-                @if($posts->count() > 0)
-                    @foreach($posts as $post)
+                    @forelse($posts as $post)
                         <div class="col-lg-4 col-md-6">
                             <div class="card h-100">
                                 <div class="single-post post-style-1">
@@ -63,21 +62,15 @@
                                 </div><!-- single-post -->
                             </div><!-- card -->
                         </div><!-- col-lg-4 col-md-6 -->
-                    @endforeach
-                @else
-                    <div class="col-lg-12 col-md-12">
-                        <div class="card h-100">
-                            <div class="single-post post-style-1">
-                                <div class="blog-info">
-                                    <h4 class="title">
-                                        <strong>Sorry, No post found :(</strong>
-                                    </h4>
-                                </div><!-- blog-info -->
-                            </div><!-- single-post -->
-                        </div><!-- card -->
-                    </div><!-- col-lg-4 col-md-6 -->
-                @endif
-
+                    @empty 
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card h-100">
+                                <div class="single-post post-style-1 p-2">
+                                <strong>No Post Found :(</strong>
+                                </div><!-- single-post -->
+                            </div><!-- card -->
+                        </div><!-- col-lg-4 col-md-6 -->
+                    @endforelse
 
             </div><!-- row -->
 

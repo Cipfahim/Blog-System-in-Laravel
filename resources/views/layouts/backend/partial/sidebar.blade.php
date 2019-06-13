@@ -167,7 +167,9 @@
     <!-- Footer -->
     <div class="legal">
         <div class="copyright">
-            &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+            &copy; 2017 - {{ date("Y") }} All rights reserved. <br>
+            <strong> Developed &amp; <i class="far fa-heart"></i> by </strong>
+                        <a href="https://www.youtube.com/channel/UCwbVAlvrsD2Tpx93bleNbOA" target="_blank">Programming kit</a>.
         </div>
         <div class="version">
             <b>Version: </b> 1.0.5
