@@ -21,7 +21,7 @@
         <div class="container">
 
             <div class="row">
-                @foreach($posts as $post)
+                @forelse($posts as $post)
                     <div class="col-lg-4 col-md-6">
                         <div class="card h-100">
                             <div class="single-post post-style-1">
@@ -60,7 +60,15 @@
                             </div><!-- single-post -->
                         </div><!-- card -->
                     </div><!-- col-lg-4 col-md-6 -->
-                @endforeach
+                @empty 
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card h-100">
+                            <div class="single-post post-style-1 p-2">
+                               <strong>No Post Found :(</strong>
+                            </div><!-- single-post -->
+                        </div><!-- card -->
+                    </div><!-- col-lg-4 col-md-6 -->
+                @endforelse
             </div><!-- row -->
 
             {{ $posts->links() }}

@@ -20,7 +20,7 @@
              data-swiper-breakpoints="true" data-swiper-loop="true" >
             <div class="swiper-wrapper">
 
-               @foreach($categories as $category)
+               @forelse($categories as $category)
                     <div class="swiper-slide">
                         <a class="slider-category" href="{{ route('category.posts',$category->slug) }}">
                             <div class="blog-image"><img src="{{ Storage::disk('public')->url('category/slider/'.$category->image) }}" alt="{{ $category->name }}"></div>
@@ -35,7 +35,11 @@
 
                         </a>
                     </div><!-- swiper-slide -->
-                @endforeach
+                @empty
+                    <div class="swiper-slide">
+                        <strong>No Data Found :(</strong>
+                    </div><!-- swiper-slide -->
+                @endforelse
 
             </div><!-- swiper-wrapper -->
 
@@ -48,7 +52,7 @@
 
             <div class="row">
 
-                @foreach($posts as $post)
+                @forelse($posts as $post)
                     <div class="col-lg-4 col-md-6">
                         <div class="card h-100">
                             <div class="single-post post-style-1">
@@ -91,11 +95,19 @@
                             </div><!-- single-post -->
                         </div><!-- card -->
                     </div><!-- col-lg-4 col-md-6 -->
-                @endforeach
-
+                @empty
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card h-100">
+                            <div class="single-post post-style-1 p-2">
+                               <strong>No Post Found :(</strong>
+                            </div><!-- single-post -->
+                        </div><!-- card -->
+                    </div><!-- col-lg-4 col-md-6 -->
+                @endforelse
+            
             </div><!-- row -->
 
-            <a class="load-more-btn" href="#"><b>LOAD MORE</b></a>
+            <a class="load-more-btn" href="{{ route('post.index') }}"><b>LOAD MORE</b></a>
 
         </div><!-- container -->
     </section><!-- section -->
